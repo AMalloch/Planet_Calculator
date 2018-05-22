@@ -8,6 +8,7 @@ import static org.junit.Assert.assertEquals;
 public class CalculatorTest {
 
     private Person person;
+    private Person person2;
     private Planet mercury;
     private Planet mars;
     private Planet pluto;
@@ -25,7 +26,8 @@ public class CalculatorTest {
 
     @Before
     public void setUp() {
-        person = new Person( "Angus", 1000000000);
+        person = new Person( "Angus", 1000000000.00);
+        person2 = new Person( "Ancient", 1000000000000.00);
         mercury = new Planet( "Mercury", 0.2408467);
         mars = new Planet( "Mars", 1.8808158);
         pluto = new Planet( "Pluto", 248.00);
@@ -54,6 +56,12 @@ public class CalculatorTest {
     public void CalculateAgePluto() {
         calculator.convertOrbitDaysToSeconds(pluto);
         assertEquals(0, calculator.calculateAge(person, pluto), 0.01);
+    }
+
+    @Test
+    public void CalculateAncietAgePluto() {
+        calculator.convertOrbitDaysToSeconds(pluto);
+        assertEquals(127, calculator.calculateAge(person2, pluto), 0.01);
     }
 
 }
