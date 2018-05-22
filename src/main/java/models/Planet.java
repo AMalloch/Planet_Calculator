@@ -3,11 +3,11 @@ package models;
 public class Planet {
 
     private String name;
-    private Double orbitInDays;
+    private Double orbitInYears;
 
-    public Planet(String name, Double orbitInDays) {
+    public Planet(String name, Double orbitInYears) {
         this.name = name;
-        this.orbitInDays = orbitInDays;
+        this.orbitInYears = orbitInYears;
     }
 
     public String getName() {
@@ -18,11 +18,11 @@ public class Planet {
         this.name = name;
     }
 
-    public Double getOrbitInDays() {
-        return orbitInDays;
+    public Double getOrbitInYears() {
+        return orbitInYears;
     }
 
-    public void setOrbitInDays(Double orbitInDays) {
-        this.orbitInDays = orbitInDays;
+    public void setOrbitInYears(Double orbitInYears) {
+        this.orbitInYears = orbitInYears;
     }
 }
