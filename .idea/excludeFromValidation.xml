@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExcludeFromValidation">
+    <file url="file://$PROJECT_DIR$/src/main/java/models/Calculator.java___jb_old___" />
+    <file url="file://$PROJECT_DIR$/src/main/java/models/Planet.java___jb_old___" />
+    <file url="file://$PROJECT_DIR$/src/main/java/models/Person.java___jb_old___" />
+  </component>
+</project>
