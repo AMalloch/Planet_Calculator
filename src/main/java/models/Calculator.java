@@ -22,24 +22,17 @@ public class Calculator {
         this.calculatorName = calculatorName;
     }
 
-    // convert orbit in days to seconds rounded to two decimal places
+    // convert orbit in years to seconds rounded to whole number
     public Double convertOrbitDaysToSeconds(Planet planet){
-        Double days = planet.getOrbitInDays();
-         Double orbitInSeconds = days * 86400.00;
-        return orbitInSeconds;
+        Double orbitInSeconds = (planet.getOrbitInYears() * 365) * 86400;
+        return Math.rint(orbitInSeconds);
     };
 
-    // convert orbit in days to seconds rounded to two decimal places
-    public Double convertPersonOrbitDaysToSeconds(Person person){
-        Integer daysOnPlanet = person.getDaysSpentOnPlanet();
-         Double personOrbitInSeconds = daysOnPlanet * 86400.00;
-        return personOrbitInSeconds;
-    };
-
-    // calculate age based on time on planet/orbit in seconds
+    // calculate age based on age in seconds time on planet/orbit in seconds
+    // age is rounded down
     public Double calculateAge(Person person, Planet planet){
-        Double age = convertPersonOrbitDaysToSeconds(person) / convertOrbitDaysToSeconds(planet);
-        return Math.rint(age);
+        Double age = person.getAgeInSeconds() / convertOrbitDaysToSeconds(planet);
+        return Math.floor(age);
     };
 
 }

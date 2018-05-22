@@ -3,11 +3,11 @@ package models;
 public class Person {
 
     private String name;
-    private Integer daysSpentOnPlanet;
+    private Integer ageInSeconds;
 
-    public Person(String name, Integer daysSpentOnPlanet) {
+    public Person(String name, Integer ageInSeconds) {
         this.name = name;
-        this.daysSpentOnPlanet = daysSpentOnPlanet;
+        this.ageInSeconds = ageInSeconds;
     }
 
     public String getName() {
@@ -18,11 +18,11 @@ public class Person {
         this.name = name;
     }
 
-    public Integer getDaysSpentOnPlanet() {
-        return daysSpentOnPlanet;
+    public Integer getAgeInSeconds() {
+        return ageInSeconds;
     }
 
-    public void setDaysSpentOnPlanet(Integer daysSpentOnPlanet) {
-        this.daysSpentOnPlanet = daysSpentOnPlanet;
+    public void setAgeInSeconds(Integer ageInSeconds) {
+        this.ageInSeconds = ageInSeconds;
     }
 }

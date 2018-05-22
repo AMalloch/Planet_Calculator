@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 public class CalculatorTest {
 
     private Person person;
-    private Planet planet;
+    private Planet mercury;
     private Calculator calculator;
 
 //    Mercury: Orbital period 0.2408467 Earth years
@@ -23,25 +23,19 @@ public class CalculatorTest {
 
     @Before
     public void setUp() {
-        person = new Person( "Angus", 710);
-        planet = new Planet( "Mercury", 87.97);
-        calculator = new Calculator("Space Age Calculator", person, planet);
+        person = new Person( "Angus", 1000000000);
+        mercury = new Planet( "Mercury", 0.2408467);
+        calculator = new Calculator("Space Age Calculator", person, mercury);
     }
 
     @Test
     public void ChangeOrbitToSeconds() {
-        assertEquals(7600608, calculator.convertOrbitDaysToSeconds(planet), 0.01);
-    }
-
-    @Test
-    public void ChangePersonOrbitToSeconds() {
-        assertEquals(61344000, calculator.convertPersonOrbitDaysToSeconds(person), 0.01);
+        assertEquals(7595342, calculator.convertOrbitDaysToSeconds(mercury), 0.01);
     }
 
     @Test
     public void CalculateAge() {
-        calculator.convertPersonOrbitDaysToSeconds(person);
-        calculator.convertOrbitDaysToSeconds(planet);
-        assertEquals(8, calculator.calculateAge(person, planet), 0.01);
+        calculator.convertOrbitDaysToSeconds(mercury);
+        assertEquals(131, calculator.calculateAge(person, mercury), 0.01);
     }
 }
