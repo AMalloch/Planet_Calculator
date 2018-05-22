@@ -23,7 +23,7 @@ public class CalculatorTest {
 
     @Before
     public void setUp() {
-        person = new Person( "Angus", 71);
+        person = new Person( "Angus", 710);
         planet = new Planet( "Mercury", 87.97);
         calculator = new Calculator("Space Age Calculator", person, planet);
     }
@@ -31,5 +31,17 @@ public class CalculatorTest {
     @Test
     public void ChangeOrbitToSeconds() {
         assertEquals(7600608, calculator.convertOrbitDaysToSeconds(planet), 0.01);
+    }
+
+    @Test
+    public void ChangePersonOrbitToSeconds() {
+        assertEquals(61344000, calculator.convertPersonOrbitDaysToSeconds(person), 0.01);
+    }
+
+    @Test
+    public void CalculateAge() {
+        calculator.convertPersonOrbitDaysToSeconds(person);
+        calculator.convertOrbitDaysToSeconds(planet);
+        assertEquals(8, calculator.calculateAge(person, planet), 0.01);
     }
 }
