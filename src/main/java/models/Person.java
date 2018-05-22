@@ -3,9 +3,9 @@ package models;
 public class Person {
 
     private String name;
-    private Integer ageInSeconds;
+    private Double ageInSeconds;
 
-    public Person(String name, Integer ageInSeconds) {
+    public Person(String name, Double ageInSeconds) {
         this.name = name;
         this.ageInSeconds = ageInSeconds;
     }
@@ -18,11 +18,11 @@ public class Person {
         this.name = name;
     }
 
-    public Integer getAgeInSeconds() {
+    public Double getAgeInSeconds() {
         return ageInSeconds;
     }
 
-    public void setAgeInSeconds(Integer ageInSeconds) {
+    public void setAgeInSeconds(Double ageInSeconds) {
         this.ageInSeconds = ageInSeconds;
     }
 }
